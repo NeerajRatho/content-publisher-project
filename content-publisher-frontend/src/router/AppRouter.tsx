@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter, Navigate } from "react-router-dom";
 import Login from "../screens/Login";
 import Signup from "../screens/Signup";
 import PublicationsList from "../screens/PublicationsList";
@@ -6,7 +6,10 @@ import AddPublication from "../screens/AddPublication";
 import EditPublication from "../screens/EditPublication";
 
 const router = createBrowserRouter([
-  { path: "/", element: <PublicationsList /> },
+  {
+    path: "/",
+    element: localStorage.getItem("token") ? <PublicationsList /> : <Navigate to="/signup" />,
+  },
   { path: "/login", element: <Login /> },
   { path: "/signup", element: <Signup /> },
   { path: "/add", element: <AddPublication /> },

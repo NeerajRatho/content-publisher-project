@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axiosClient from "../api/axiosClient";
 import Loader from "../components/Loader";
 import ErrorMessage from "../components/ErrorMessage";
